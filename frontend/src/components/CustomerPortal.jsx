@@ -17,7 +17,7 @@ export default function CustomerPortal() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://backend-node-1069744995127.europe-west1.run.app/api/tickets', {
+      const response = await fetch('https://backend-node-1069744995127.asia-south1.run.app/api/tickets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ customerName: name, ticketText }),
