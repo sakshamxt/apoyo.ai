@@ -17,7 +17,7 @@ export default function TicketTracker() {
     setTicket(null);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/tickets/${searchId}`);
+      const response = await fetch(`https://backend-node-1069744995127.europe-west1.run.app/api/tickets/${searchId}`);
       if (!response.ok) {
         throw new Error('Ticket not found. Please check the ID and try again.');
       }

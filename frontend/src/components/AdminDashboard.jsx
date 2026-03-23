@@ -40,7 +40,7 @@ export default function AdminDashboard({ session }) {
     setUploadMsg('');
 
     try {
-      const res = await fetch('http://localhost:8000/upload-document', {
+      const res = await fetch('https://apoyo-ai-1069744995127.asia-south1.run.app/upload-document', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title: docTitle, content: docContent })
@@ -63,7 +63,7 @@ export default function AdminDashboard({ session }) {
     setAnalyzingId(ticket.id);
     
     try {
-      const res = await fetch('http://localhost:8000/analyze-ticket', {
+      const res = await fetch('https://apoyo-ai-1069744995127.asia-south1.run.app/analyze-ticket', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         // FIX: Send the raw DB column name to Python
