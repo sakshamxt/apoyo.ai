@@ -1,6 +1,7 @@
 import os
 import json
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google import genai
 from google.genai import types
@@ -24,6 +25,14 @@ if not supabase_url or not supabase_key:
 supabase: Client = create_client(supabase_url, supabase_key)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"], # Allows your React app
+    allow_credentials=True,
+    allow_methods=["*"], # Allows POST, GET, OPTIONS, etc.
+    allow_headers=["*"], # Allows all headers
+)
 
 # Data Models
 class TicketRequest(BaseModel):
